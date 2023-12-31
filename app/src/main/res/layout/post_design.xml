@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profileImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/profileNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/profileImage"
+            app:layout_constraintTop_toTopOf="@+id/profileImage"
+            tools:text="profile name" />
+
+        <TextView
+            android:id="@+id/timerTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_marginTop="1dp"
+            app:layout_constraintBottom_toBottomOf="@id/profileImage"
+            app:layout_constraintStart_toEndOf="@id/profileImage"
+            app:layout_constraintTop_toBottomOf="@+id/profileNameTv"
+            tools:text="2 hrs" />
+
+        <ImageView
+            android:id="@+id/menuBtn"
+            android:layout_width="20dp"
+            android:layout_height="33dp"
+            android:layout_margin="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/dots"
+            app:layout_constraintBottom_toBottomOf="@+id/profileImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/profileImage" />
+
+        <TextView
+            android:id="@+id/postDescriptionTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/menuBtn"
+            app:layout_constraintStart_toStartOf="@id/profileImage"
+            app:layout_constraintTop_toBottomOf="@id/profileImage"
+            tools:text="this is the post description , here disappear what you write in your post" />
+
+        <ImageView
+            android:id="@+id/postImage"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="15dp"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="@+id/postDescriptionTV"
+            app:layout_constraintStart_toStartOf="@+id/postDescriptionTV"
+            app:layout_constraintTop_toBottomOf="@+id/postDescriptionTV"
+            tools:src="@tools:sample/avatars" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="@id/postImage"
+            app:layout_constraintStart_toStartOf="@id/postImage"
+            app:layout_constraintTop_toBottomOf="@id/postImage">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_weight="6"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/likeImage"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="4dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/like_logo" />
+
+                <TextView
+                    android:id="@+id/likeCounter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    tools:text="12" />
+
+                <TextView
+                    android:id="@+id/shareCounter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:layout_weight="3"
+                    android:gravity="end"
+                    tools:text="1" />
+
+                <TextView
+                    android:id="@+id/shareTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:text="@string/share" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/likeBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/white"
+                    android:text="@string/like"
+                    android:textColor="@color/black"
+                    android:textSize="10sp"
+                    app:icon="@drawable/like"
+                    app:iconTint="@color/black"
+                    tools:ignore="NestedWeights" />
+
+                <Button
+                    android:id="@+id/CommentBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/white"
+                    android:text="@string/comment"
+                    android:textColor="@color/black"
+                    android:textSize="10sp"
+                    app:icon="@drawable/comment_logo"
+                    app:iconTint="@color/black"
+                    tools:ignore="NestedWeights" />
+
+                <Button
+                    android:id="@+id/ShareBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/white"
+                    android:text="@string/share"
+                    android:textColor="@color/black"
+                    android:textSize="10sp"
+                    app:cornerRadius="0dp"
+                    app:icon="@drawable/share"
+                    app:iconTint="@color/black"
+                    tools:ignore="NestedWeights" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
